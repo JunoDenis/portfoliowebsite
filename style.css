@@ -1,0 +1,203 @@
+
+/* Algemene instellingen voor de volledige website */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+    color: #fff;
+    line-height: 1.6;
+}
+
+/* Bovenkant van de pagina */
+header {
+    background-color: #80f;
+    color: #fff;
+    text-align: center;
+    padding: 25px 15px;
+}
+
+/* Hoofdtitels */
+h1 {
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: #80f;
+    margin-top: 0;
+}
+
+h3 {
+    color: #80f;
+}
+
+/* Navigatiemenu */
+nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+}
+
+nav a:hover {
+    background-color: #000;
+}
+
+/* Inhoud van de pagina */
+main {
+    max-width: 1000px;
+    margin: 25px auto;
+    padding: 0 20px;
+}
+
+section {
+    background-color: #fff;
+    color: #000;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+/* Paragrafen en links */
+p {
+    margin-bottom: 15px;
+}
+
+a {
+    color: #80f;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Profielfoto op de startpagina */
+.profielfoto {
+    width: 200px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Lijsten */
+ul {
+    padding-left: 25px;
+}
+
+/* Tabellen */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background-color: #fff;
+    color: #000;
+}
+
+caption {
+    font-weight: bold;
+    padding: 10px;
+    color: #80f;
+}
+
+th,
+td {
+    border: 1px solid #000;
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #80f;
+    color: #fff;
+}
+
+/* Contactformulier */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+input,
+select,
+textarea {
+    font-family: inherit;
+    font-size: 1rem;
+    padding: 10px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.form-knoppen {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+button {
+    background-color: #80f;
+    color: #fff;
+    border: 2px solid #000;
+    padding: 10px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+/* Project dat nog in aanbouw is */
+.project-banner {
+    padding: 15px;
+    margin: 20px 0;
+    border: 2px dashed #80f;
+    border-radius: 8px;
+    text-align: center;
+    background-color: #f2f2f2;
+    color: #000;
+}
+
+/* Voet van de pagina */
+footer {
+    background-color: #80f;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    margin-top: 30px;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Aanpassing voor kleinere schermen */
+@media (max-width: 600px) {
+    main {
+        padding: 0 12px;
+    }
+
+    section {
+        padding: 15px;
+    }
+
+    nav {
+        gap: 5px;
+    }
+}
+
