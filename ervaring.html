@@ -5,113 +5,732 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Ervaring | Juno Denis</title>
+    <title>Ervaring - Mijn portfolio</title>
 
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="favicon.ico">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="images/favicon.ico">
+
+    <style>
+        /* Algemene kaarten */
+        .experience-card {
+            height: 100%;
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 0.15rem 0.7rem rgba(0, 0, 0, 0.08);
+        }
+
+        .experience-card .card-body {
+            padding: 1.5rem;
+        }
+
+        .section-icon {
+            color: #8000ff;
+            font-size: 1.5rem;
+            margin-right: 0.5rem;
+        }
+
+        .experience-entry {
+            padding-bottom: 1rem;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid #eeeeee;
+        }
+
+        .experience-entry:last-child {
+            padding-bottom: 0;
+            margin-bottom: 0;
+            border-bottom: none;
+        }
+
+        /* Projectkaart */
+        .project-card {
+            border-left: 5px solid #8000ff;
+        }
+
+        .project-status {
+            display: inline-block;
+            padding: 0.3rem 0.65rem;
+            border-radius: 20px;
+            background-color: #f0e3ff;
+            color: #6500cc;
+            font-size: 0.8rem;
+        }
+
+        /* Flipkaarten */
+        .skill-item {
+            height: 170px;
+            perspective: 1000px;
+        }
+
+        .skill-flipper {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            transition: transform 0.6s ease;
+        }
+
+        .skill-item.is-flipped .skill-flipper {
+            transform: rotateY(180deg);
+        }
+
+        .skill-front,
+        .skill-back {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 12px;
+            border: 1px solid #dee2e6;
+            border-radius: 12px;
+            background: white;
+            box-shadow: 0 0.15rem 0.5rem rgba(0, 0, 0, 0.04);
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+            overflow-wrap: anywhere;
+        }
+
+        .skill-front {
+            width: 100%;
+            color: inherit;
+            cursor: pointer;
+            font: inherit;
+            text-align: center;
+        }
+
+        .skill-front i {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #8000ff;
+            font-size: 1.8rem;
+        }
+
+        .skill-front:hover,
+        .skill-back:hover {
+            box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.12);
+        }
+
+        .skill-front:focus-visible,
+        .skill-back:focus-visible {
+            outline: 3px solid #8000ff;
+            outline-offset: 3px;
+        }
+
+        .skill-back {
+            width: 100%;
+            color: inherit;
+            font: inherit;
+            cursor: pointer;
+            transform: rotateY(180deg);
+            align-items: flex-start;
+            justify-content: flex-start;
+            text-align: left;
+            font-size: 0.85rem;
+        }
+
+        .skill-back p {
+            margin-top: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Verberg de achterkant als de kaart nog dicht is */
+        .skill-item:not(.is-flipped) .skill-back {
+            visibility: hidden;
+        }
+
+        .skill-item.is-flipped .skill-front {
+            visibility: hidden;
+        }
+
+        /* Tabel */
+        .skills-table th {
+            background-color: #f5ebff;
+        }
+
+        .skills-table td,
+        .skills-table th {
+            vertical-align: middle;
+        }
+
+        /* Talenkennis */
+        .language-item {
+            margin-bottom: 1rem;
+        }
+
+        .language-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .progress {
+            height: 9px;
+            border-radius: 10px;
+        }
+
+        .progress-bar {
+            background-color: #8000ff;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .skill-flipper {
+                transition: none;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
+    <!-- Navigatie: dezelfde structuur als index.html -->
     <header>
-        <h1>Ervaring</h1>
+        <nav class="navbar navbar-dark circus-navbar">
+            <div class="container">
+                <span class="navbar-brand fw-bold">Mijn portfolio</span>
 
-        <nav>
-            <a href="start.html">Start</a>
-            <a href="cv.html">CV</a>
-            <a href="ervaring.html">Ervaring</a>
-            <a href="hobby-interesse.html">Interesses / hobby's</a>
-            <a href="contact.html">Contact</a>
+                <button class="navbar-toggler" type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#mainNavbar"
+                        aria-controls="mainNavbar"
+                        aria-expanded="false"
+                        aria-label="Menu openen of sluiten">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="mainNavbar">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Start</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="cv.html">CV</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link active"
+                               aria-current="page"
+                               href="ervaring.html">Ervaring</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link"
+                               href="hobby-interesse.html">Interesses / hobby's</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </nav>
     </header>
 
-    <main>
-        <section>
-            <h2>Opleiding</h2>
+    <main class="container py-4">
 
-            <p>Ik volg momenteel de opleiding Graduaat Programmeren aan Thomas More. Tijdens deze opleiding ontwikkel ik mijn programmeervaardigheden en leer ik websites en applicaties bouwen.</p>
+        <!-- Paginatitel -->
+        <div class="text-center mb-4">
+            <h1>Mijn ervaring</h1>
+            <p class="text-muted">
+                Een overzicht van mijn opleiding, werkervaring en programmeerkennis.
+            </p>
+        </div>
 
-            <p>In het secundair onderwijs volgde ik de opleiding Onthaal, Organisatie en Sales.</p>
-        </section>
+        <!-- Opleiding en werkervaring -->
+        <div class="row g-4 mb-4">
 
-        <section>
-            <h2>Werkervaring</h2>
+            <!-- Opleiding -->
+            <div class="col-md-6">
+                <div class="card experience-card">
+                    <div class="card-body">
+                        <h2 class="h4 mb-4">
+                            <i class="bi bi-mortarboard section-icon"
+                               aria-hidden="true"></i>
+                            Opleiding
+                        </h2>
 
-            <p>Van januari tot en met mei werkte ik bij Colruyt. Mijn taken bestonden uit het aanvullen van rekken en het helpen van klanten.</p>
+                        <div class="experience-entry">
+                            <h3 class="h5">Graduaat Programmeren</h3>
+                            <p class="text-muted mb-1">
+                                Thomas More Kempen — Turnhout
+                            </p>
+                            <p class="text-muted small mb-2">
+                                September 2026 – heden
+                            </p>
+                            <p class="mb-0">
+                                Ik leer programmeren en werk aan praktische
+                                opdrachten en projecten.
+                            </p>
+                        </div>
 
-            <p>Tijdens mijn stage bij Ghielens Restauratiewerken deed ik ervaring op met administratieve taken en het werken met Excel.</p>
-
-            <p>Daarnaast ben ik actief als assistent bij circusactiviteiten, waar ik help bij de begeleiding en het verloop van de lessen.</p>
-        </section>
-
-        <section>
-            <h2>Projecten</h2>
-
-            <article>
-                <h3>Applicatie voor Ghielens Restauratiewerken</h3>
-
-                <p>Sinds juni werk ik aan een applicatie voor Ghielens Restauratiewerken. Met dit project pas ik mijn programmeerkennis toe in de praktijk.</p>
-
-                <div class="project-banner">
-                    <p><strong>Project in aanbouw</strong></p>
-                    <p>Deze projectpagina is momenteel nog in ontwikkeling. Meer informatie en details over de applicatie volgen later.</p>
+                        <div class="experience-entry">
+                            <h3 class="h5">Bedrijf en organisatie</h3>
+                            <p class="text-muted mb-1">
+                                Immaculata — Malle
+                            </p>
+                            <p class="text-muted small mb-2">
+                                September 2020 – juni 2026
+                            </p>
+                            <p class="mb-0">
+                                Mijn middelbare opleiding, met aandacht voor
+                                bedrijfsgerichte en administratieve vaardigheden.
+                            </p>
+                        </div>
+                    </div>
                 </div>
-            </article>
-        </section>
+            </div>
 
-        <section>
-            <h2>Vaardigheden</h2>
+            <!-- Werkervaring -->
+            <div class="col-md-6">
+                <div class="card experience-card">
+                    <div class="card-body">
+                        <h2 class="h4 mb-4">
+                            <i class="bi bi-briefcase section-icon"
+                               aria-hidden="true"></i>
+                            Werkervaring
+                        </h2>
 
-            <p>Ik heb kennis van JavaScript, HTML, CSS en C#. Daarnaast beschik ik over probleemoplossend denkvermogen en zoek ik graag naar praktische oplossingen voor uitdagingen.</p>
-        </section>
+                        <div class="experience-entry">
+                            <h3 class="h5">Colruyt Group</h3>
+                            <p class="text-muted mb-1">Westmalle</p>
+                            <p class="text-muted small mb-2">
+                                Januari 2025 – mei 2025
+                            </p>
+                            <p class="mb-0">
+                                Studentenjob waarbij ik ervaring opdeed met
+                                werken in een professionele omgeving.
+                            </p>
+                        </div>
 
-        <section>
-            <h2>Programmeervaardigheden</h2>
+                        <div class="experience-entry">
+                            <h3 class="h5">Ghielens Restauratiewerken</h3>
+                            <p class="text-muted mb-1">
+                                Administratieve stage
+                            </p>
+                            <p class="text-muted small mb-2">
+                                September 2025 – juni 2026
+                            </p>
+                            <p class="mb-0">
+                                Ik deed ervaring op met administratieve taken
+                                en werkte aan een webapplicatie als project.
+                            </p>
+                        </div>
 
-            <table>
-                <caption>Overzicht van mijn programmeerkennis</caption>
-                <thead>
-                    <tr>
-                        <th scope="col">Technologie</th>
-                        <th scope="col">Toepassing</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>HTML</td>
-                        <td>De structuur van webpagina's maken</td>
-                    </tr>
-                    <tr>
-                        <td>CSS</td>
-                        <td>Webpagina's vormgeven</td>
-                    </tr>
-                    <tr>
-                        <td>JavaScript</td>
-                        <td>Interactie en functionaliteit toevoegen</td>
-                    </tr>
-                    <tr>
-                        <td>C#</td>
-                        <td>Programmeren en applicaties ontwikkelen</td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
+                        <div class="experience-entry">
+                            <h3 class="h5">Circusassistent</h3>
+                            <p class="text-muted mb-1">Locorotondo VZW</p>
+                            <p class="text-muted small mb-2">
+                                September 2025 – heden
+                            </p>
+                            <p class="mb-0">
+                                Ik help mee tijdens circuslessen en ondersteun
+                                bij activiteiten en begeleiding.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-        <section>
-            <h2>Talen</h2>
+        </div>
 
-            <ul>
-                <li><strong>Nederlands:</strong> moedertaal</li>
-                <li><strong>Engels:</strong> vloeiend</li>
-                <li><strong>Duits:</strong> basiskennis</li>
-                <li><strong>Frans:</strong> basiskennis</li>
-            </ul>
-        </section>
+        <!-- Project -->
+        <div class="card experience-card project-card mb-4">
+            <div class="card-body">
+                <h2 class="h4 mb-3">
+                    <i class="bi bi-code-square section-icon"
+                       aria-hidden="true"></i>
+                    Project in de kijker
+                </h2>
+
+                <span class="project-status mb-3">In ontwikkeling</span>
+
+                <h3 class="h5 mt-3">
+                    Webapplicatie voor Ghielens Restauratiewerken
+                </h3>
+
+                <p class="mb-2">
+                    Ik werk aan een webapplicatie als onderdeel van mijn project.
+                    Daarbij kan ik mijn kennis van webontwikkeling en programmeren
+                    verder toepassen.
+                </p>
+
+                <p class="text-muted mb-0">
+                    De applicatie is nog in ontwikkeling.
+                </p>
+            </div>
+        </div>
+
+        <!-- Programmeerkennis en overzichtstabel -->
+        <div class="row g-4 mb-4">
+
+            <!-- Flipkaarten -->
+            <div class="col-lg-6">
+                <div class="card experience-card">
+                    <div class="card-body">
+                        <h2 class="h4 mb-2">
+                            <i class="bi bi-laptop section-icon"
+                               aria-hidden="true"></i>
+                            Programmeerkennis
+                        </h2>
+
+                        <p class="text-muted small mb-4">
+                            Klik op een kaart om meer te ontdekken.
+                        </p>
+
+                        <div class="row g-3">
+
+                            <!-- HTML -->
+                            <div class="col-6">
+                                <div class="skill-item" id="htmlCard">
+                                    <div class="skill-flipper">
+
+                                        <button class="skill-front"
+                                                type="button"
+                                                aria-label="Bekijk details over HTML"
+                                                aria-expanded="false"
+                                                aria-controls="htmlBack"
+                                                onclick="flipSkill('htmlCard')">
+                                            <i class="bi bi-filetype-html"
+                                               aria-hidden="true"></i>
+                                            <span>HTML</span>
+                                            <small class="text-muted mt-2">
+                                                Klik om te ontdekken
+                                            </small>
+                                        </button>
+
+                                        <button class="skill-back"
+                                                id="htmlBack"
+                                                type="button"
+                                                aria-label="Terug naar HTML"
+                                                onclick="flipSkill('htmlCard')"
+                                                inert>
+                                            <strong>HTML</strong>
+                                            <p>
+                                                Bepaalt de structuur en inhoud
+                                                van webpagina's.
+                                            </p>
+                                            <p>
+                                                <strong>Toegepast in:</strong>
+                                                mijn portfolio.
+                                            </p>
+                                            <small class="text-muted mt-auto">
+                                                Klik om terug te draaien
+                                            </small>
+                                        </button>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- CSS -->
+                            <div class="col-6">
+                                <div class="skill-item" id="cssCard">
+                                    <div class="skill-flipper">
+
+                                        <button class="skill-front"
+                                                type="button"
+                                                aria-label="Bekijk details over CSS"
+                                                aria-expanded="false"
+                                                aria-controls="cssBack"
+                                                onclick="flipSkill('cssCard')">
+                                            <i class="bi bi-filetype-css"
+                                               aria-hidden="true"></i>
+                                            <span>CSS</span>
+                                            <small class="text-muted mt-2">
+                                                Klik om te ontdekken
+                                            </small>
+                                        </button>
+
+                                        <button class="skill-back"
+                                                id="cssBack"
+                                                type="button"
+                                                aria-label="Terug naar CSS"
+                                                onclick="flipSkill('cssCard')"
+                                                inert>
+                                            <strong>CSS</strong>
+                                            <p>
+                                                Zorgt voor de vormgeving, kleuren
+                                                en lay-out van websites.
+                                            </p>
+                                            <p>
+                                                <strong>Toegepast in:</strong>
+                                                de styling van mijn portfolio.
+                                            </p>
+                                            <small class="text-muted mt-auto">
+                                                Klik om terug te draaien
+                                            </small>
+                                        </button>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- SQL / MySQL -->
+                            <div class="col-6">
+                                <div class="skill-item" id="sqlCard">
+                                    <div class="skill-flipper">
+
+                                        <button class="skill-front"
+                                                type="button"
+                                                aria-label="Bekijk details over SQL en MySQL"
+                                                aria-expanded="false"
+                                                aria-controls="sqlBack"
+                                                onclick="flipSkill('sqlCard')">
+                                            <i class="bi bi-database"
+                                               aria-hidden="true"></i>
+                                            <span>SQL / MySQL</span>
+                                            <small class="text-muted mt-2">
+                                                Klik om te ontdekken
+                                            </small>
+                                        </button>
+
+                                        <button class="skill-back"
+                                                id="sqlBack"
+                                                type="button"
+                                                aria-label="Terug naar SQL en MySQL"
+                                                onclick="flipSkill('sqlCard')"
+                                                inert>
+                                            <strong>SQL / MySQL</strong>
+                                            <p>
+                                                Wordt gebruikt om gegevens in
+                                                databases op te vragen en te beheren.
+                                            </p>
+                                            <p>
+                                                <strong>Toegepast in:</strong>
+                                                databaseoefeningen.
+                                            </p>
+                                            <small class="text-muted mt-auto">
+                                                Klik om terug te draaien
+                                            </small>
+                                        </button>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Bootstrap -->
+                            <div class="col-6">
+                                <div class="skill-item" id="bootstrapCard">
+                                    <div class="skill-flipper">
+
+                                        <button class="skill-front"
+                                                type="button"
+                                                aria-label="Bekijk details over Bootstrap"
+                                                aria-expanded="false"
+                                                aria-controls="bootstrapBack"
+                                                onclick="flipSkill('bootstrapCard')">
+                                            <i class="bi bi-bootstrap"
+                                               aria-hidden="true"></i>
+                                            <span>Bootstrap</span>
+                                            <small class="text-muted mt-2">
+                                                Klik om te ontdekken
+                                            </small>
+                                        </button>
+
+                                        <button class="skill-back"
+                                                id="bootstrapBack"
+                                                type="button"
+                                                aria-label="Terug naar Bootstrap"
+                                                onclick="flipSkill('bootstrapCard')"
+                                                inert>
+                                            <strong>Bootstrap</strong>
+                                            <p>
+                                                Helpt om websites te bouwen die
+                                                zich aanpassen aan verschillende
+                                                schermgroottes.
+                                            </p>
+                                            <p>
+                                                <strong>Toegepast in:</strong>
+                                                de lay-out van mijn portfolio.
+                                            </p>
+                                            <small class="text-muted mt-auto">
+                                                Klik om terug te draaien
+                                            </small>
+                                        </button>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Overzichtstabel -->
+            <div class="col-lg-6">
+                <div class="card experience-card">
+                    <div class="card-body">
+                        <h2 class="h4 mb-3">
+                            <i class="bi bi-table section-icon"
+                               aria-hidden="true"></i>
+                            Overzicht van mijn kennis
+                        </h2>
+
+                        <div class="table-responsive">
+                            <table class="table table-bordered skills-table mb-0">
+                                <caption>
+                                    Overzicht van mijn programmeerkennis
+                                </caption>
+
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Technologie</th>
+                                        <th scope="col">Toepassing</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    <tr>
+                                        <td>HTML</td>
+                                        <td>Structuur van webpagina's</td>
+                                    </tr>
+                                    <tr>
+                                        <td>CSS</td>
+                                        <td>Vormgeving van websites</td>
+                                    </tr>
+                                    <tr>
+                                        <td>SQL / MySQL</td>
+                                        <td>Databases en gegevens</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Bootstrap</td>
+                                        <td>Responsieve lay-outs</td>
+                                    </tr>
+                                    <tr>
+                                        <td>C#</td>
+                                        <td>Consoleapplicaties en logica</td>
+                                    </tr>
+                                    <tr>
+                                        <td>JavaScript</td>
+                                        <td>Interactie op webpagina's</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Talenkennis -->
+        <div class="card experience-card mb-4">
+            <div class="card-body">
+                <h2 class="h4 mb-4">
+                    <i class="bi bi-translate section-icon"
+                       aria-hidden="true"></i>
+                    Talenkennis
+                </h2>
+
+                <div class="row g-4">
+
+                    <div class="col-md-6">
+                        <div class="language-item">
+                            <div class="d-flex justify-content-between mb-1">
+                                <span>Nederlands</span>
+                                <span class="text-muted">Moedertaal</span>
+                            </div>
+                            <div class="progress"
+                                 role="progressbar"
+                                 aria-label="Nederlands">
+                                <div class="progress-bar" style="width: 100%"></div>
+                            </div>
+                        </div>
+
+                        <div class="language-item">
+                            <div class="d-flex justify-content-between mb-1">
+                                <span>Engels</span>
+                                <span class="text-muted">Vlot</span>
+                            </div>
+                            <div class="progress"
+                                 role="progressbar"
+                                 aria-label="Engels">
+                                <div class="progress-bar" style="width: 90%"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="language-item">
+                            <div class="d-flex justify-content-between mb-1">
+                                <span>Duits</span>
+                                <span class="text-muted">Beginner</span>
+                            </div>
+                            <div class="progress"
+                                 role="progressbar"
+                                 aria-label="Duits">
+                                <div class="progress-bar" style="width: 25%"></div>
+                            </div>
+                        </div>
+
+                        <div class="language-item">
+                            <div class="d-flex justify-content-between mb-1">
+                                <span>Frans</span>
+                                <span class="text-muted">Beginner</span>
+                            </div>
+                            <div class="progress"
+                                 role="progressbar"
+                                 aria-label="Frans">
+                                <div class="progress-bar" style="width: 25%"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
     </main>
 
-    <footer>
-        <p>&copy; 2026 Juno Denis</p>
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container text-center py-3">
+            <p class="mb-2">
+                &copy; 2026 Juno Denis — Mijn portfolio
+            </p>
+
+            <a href="https://www.linkedin.com/in/juno-denis-677b60400/"
+               target="_blank"
+               rel="noopener noreferrer"
+               aria-label="LinkedIn-profiel">
+                <svg xmlns="http://www.w3.org/2000/svg"
+                     width="24"
+                     height="24"
+                     fill="currentColor"
+                     viewBox="0 0 16 16"
+                     aria-hidden="true">
+                    <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zM3.743 5.185c.837 0 1.357-.554 1.357-1.248-.015-.709-.52-1.248-1.341-1.248-.82 0-1.356.54-1.356 1.248 0 .694.52 1.248 1.326 1.248h.014zm4.66 8.209V9.359c0-.216.016-.432.08-.586.173-.432.567-.88 1.23-.88.867 0 1.213.663 1.213 1.635v3.866h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.16 1.193v.025h-.016l.016-.025V6.169H6.002c.03.678 0 7.225 0 7.225h2.401z"/>
+                </svg>
+            </a>
+        </div>
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        function flipSkill(cardId) {
+            const card = document.getElementById(cardId);
+            const isFlipped = card.classList.contains("is-flipped");
+            const shouldFlip = !isFlipped;
+
+            card.classList.toggle("is-flipped", shouldFlip);
+
+            const front = card.querySelector(".skill-front");
+            const back = card.querySelector(".skill-back");
+
+            front.setAttribute("aria-expanded", String(shouldFlip));
+
+            front.inert = shouldFlip;
+            back.inert = !shouldFlip;
+        }
+    </script>
 
 </body>
 </html>

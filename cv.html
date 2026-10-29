@@ -7,69 +7,466 @@
 
     <title>CV | Juno Denis</title>
 
-    <link rel="stylesheet" href="style.css">
+    <!-- Bootstrap -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+    <!-- Swiper carousel plugin -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    >
+
+    <!-- Eigen CSS -->
+    <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="favicon.ico">
+
+    <style>
+        .cv-profile-photo {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .cv-section {
+            height: 100%;
+        }
+
+        .skill-card {
+            min-height: 150px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            padding: 20px;
+            text-align: center;
+            border: 1px solid #dee2e6;
+            border-radius: 12px;
+        }
+
+        .skill-card img {
+            width: 65px;
+            height: 65px;
+            object-fit: contain;
+        }
+
+        .swiper {
+            padding: 10px 5px 40px;
+        }
+
+        .swiper-button-prev,
+        .swiper-button-next {
+            color: #495057;
+        }
+
+        .swiper-pagination-bullet-active {
+            background: #495057;
+        }
+    </style>
 </head>
 
 <body>
 
-    <header>
-        <h1>Curriculum vitae</h1>
+    <header class="container-fluid py-4">
+        <div class="container">
+            <h1 class="text-center mb-4">Curriculum vitae</h1>
 
-        <nav>
-            <a href="start.html">Start</a>
-            <a href="cv.html">CV</a>
-            <a href="ervaring.html">Ervaring</a>
-            <a href="hobby-interesse.html">Interesses / hobby's</a>
-            <a href="contact.html">Contact</a>
-        </nav>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light rounded px-3">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="index.html">Juno Denis</a>
+
+                    <button
+                        class="navbar-toggler"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#mainNavigation"
+                        aria-controls="mainNavigation"
+                        aria-expanded="false"
+                        aria-label="Navigatie openen"
+                    >
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="mainNavigation">
+                        <ul class="navbar-nav ms-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="index.html">Start</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="cv.html">CV</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="ervaring.html">Ervaring</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="hobby-interesse.html">Interesses / hobby's</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="contact.html">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
     </header>
 
-    <main>
-        <section>
-            <h2>Profiel</h2>
+    <main class="container py-4">
 
-            <p>Ik ben Juno Denis en ik studeer Graduaat Programmeren aan Thomas More.</p>
+        <!-- Profiel -->
+        <section class="card shadow-sm mb-4">
+            <div class="card-body p-4">
+                <div class="row align-items-center g-4">
 
-            <p>Ik ben geïnteresseerd in programmeren en technologie. Ik ben creatief en denk graag na over oplossingen voor problemen.</p>
+                    <div class="col-12 col-md-3 text-center">
+                        <img
+                            src="images/IMG-20251105-WA0002.jpg"
+                            alt="Foto van Juno Denis"
+                            class="cv-profile-photo"
+                        >
+                    </div>
+
+                    <div class="col-12 col-md-9">
+                        <h2 class="card-title">Juno Denis</h2>
+
+                        <h3 class="h5 mt-3">Professionele samenvatting</h3>
+
+                        <p>
+                            Ik ben een gemotiveerde student met interesse in technologie,
+                            programmeren en probleemoplossing. Ik werk nauwkeurig en leer
+                            graag nieuwe vaardigheden, zowel zelfstandig als in teamverband.
+                            Dankzij mijn doorzettingsvermogen en creatief denken pak ik
+                            uitdagingen praktisch aan en zoek ik efficiënte oplossingen.
+                            Ik ben leergierig, verantwoordelijk en klaar om mezelf verder
+                            te ontwikkelen in een professionele omgeving.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
         </section>
 
-        <section>
-            <h2>Mijn doel</h2>
+        <div class="row g-4">
 
-            <p>Mijn doel is om bij te leren over programmeren en mijn kennis in de praktijk toe te passen.</p>
+            <!-- Opleiding -->
+            <div class="col-12 col-lg-6">
+                <section class="card shadow-sm cv-section">
+                    <div class="card-body p-4">
+                        <h2 class="h4 card-title">Opleiding</h2>
+
+                        <div class="mb-4">
+                            <h3 class="h5">Graduaat Programmeren</h3>
+                            <p class="mb-1">Thomas More Kempen — Turnhout</p>
+                            <p class="text-muted mb-0">September 2026 – heden</p>
+                        </div>
+
+                        <div class="mb-4">
+                            <h3 class="h5">Bedrijf en organisatie</h3>
+                            <p class="mb-1">Immaculata — Malle</p>
+                            <p class="text-muted mb-0">September 2020 – juni 2026</p>
+                        </div>
+
+                        <h3 class="h5">Certificaat</h3>
+
+                        <p>
+                            Ik behaalde een attest als animator in het jeugdwerk.
+                            Deze opleiding leerde me hoe ik activiteiten kan begeleiden
+                            en rekening kan houden met verschillende deelnemers.
+                        </p>
+
+                        <a
+                            href="images/animator-certificaat.pdf"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="btn btn-outline-secondary"
+                        >
+                            Bekijk animatorattest (PDF)
+                        </a>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Werkervaring -->
+            <div class="col-12 col-lg-6">
+                <section class="card shadow-sm cv-section">
+                    <div class="card-body p-4">
+                        <h2 class="h4 card-title">Werkervaring</h2>
+
+                        <h3 class="h5">Winkelbediende — studentenjob</h3>
+                        <p class="mb-1">Colruyt Group — Westmalle</p>
+                        <p class="text-muted">Januari 2025 – mei 2025</p>
+
+                        <ul>
+                            <li>Klanten vriendelijk geholpen en vragen beantwoord.</li>
+                            <li>Rekken aangevuld en de winkel ordelijk gehouden.</li>
+                            <li>Samengewerkt met collega's in een drukke omgeving.</li>
+                            <li>Nauwkeurig en efficiënt gewerkt onder tijdsdruk.</li>
+                        </ul>
+
+                        <hr>
+
+                        <h3 class="h5">Administratieve stage</h3>
+                        <p class="mb-1">Ghielens Restauratiewerken</p>
+                        <p class="text-muted mb-0">
+                            Administratieve stage.
+                        </p>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Talenkennis -->
+            <div class="col-12 col-lg-6">
+                <section class="card shadow-sm cv-section">
+                    <div class="card-body p-4">
+                        <h2 class="h4 card-title">Talenkennis</h2>
+
+                        <div class="mb-3">
+                            <div class="d-flex justify-content-between">
+                                <span>Nederlands</span>
+                                <span>Vloeiend</span>
+                            </div>
+                            <div
+                                class="progress"
+                                role="progressbar"
+                                aria-label="Nederlands: vloeiend"
+                                aria-valuenow="100"
+                                aria-valuemin="0"
+                                aria-valuemax="100"
+                            >
+                                <div class="progress-bar" style="width: 100%"></div>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <div class="d-flex justify-content-between">
+                                <span>Engels</span>
+                                <span>Expert</span>
+                            </div>
+                            <div
+                                class="progress"
+                                role="progressbar"
+                                aria-label="Engels: expert"
+                                aria-valuenow="90"
+                                aria-valuemin="0"
+                                aria-valuemax="100"
+                            >
+                                <div class="progress-bar" style="width: 90%"></div>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <div class="d-flex justify-content-between">
+                                <span>Duits</span>
+                                <span>Beginner</span>
+                            </div>
+                            <div
+                                class="progress"
+                                role="progressbar"
+                                aria-label="Duits: beginner"
+                                aria-valuenow="25"
+                                aria-valuemin="0"
+                                aria-valuemax="100"
+                            >
+                                <div class="progress-bar" style="width: 25%"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="d-flex justify-content-between">
+                                <span>Frans</span>
+                                <span>Beginner</span>
+                            </div>
+                            <div
+                                class="progress"
+                                role="progressbar"
+                                aria-label="Frans: beginner"
+                                aria-valuenow="25"
+                                aria-valuemin="0"
+                                aria-valuemax="100"
+                            >
+                                <div class="progress-bar" style="width: 25%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Vaardigheden carousel -->
+            <div class="col-12 col-lg-6">
+                <section class="card shadow-sm cv-section">
+                    <div class="card-body p-4">
+                        <h2 class="h4 card-title">Vaardigheden</h2>
+
+                        <p>
+                            Een overzicht van technologieën en tools waarmee ik leer werken.
+                        </p>
+
+                        <div class="swiper skillsSwiper">
+                            <div class="swiper-wrapper">
+
+                                <div class="swiper-slide">
+                                    <div class="skill-card">
+                                        <img
+                                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
+                                            alt="HTML-logo"
+                                        >
+                                        <span>HTML</span>
+                                    </div>
+                                </div>
+
+                                <div class="swiper-slide">
+                                    <div class="skill-card">
+                                        <img
+                                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
+                                            alt="CSS-logo"
+                                        >
+                                        <span>CSS</span>
+                                    </div>
+                                </div>
+
+                                <div class="swiper-slide">
+                                    <div class="skill-card">
+                                        <img
+                                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"
+                                            alt="MySQL-logo"
+                                        >
+                                        <span>SQL / MySQL</span>
+                                    </div>
+                                </div>
+
+                                <div class="swiper-slide">
+                                    <div class="skill-card">
+                                        <img
+                                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg"
+                                            alt="Bootstrap-logo"
+                                        >
+                                        <span>Bootstrap</span>
+                                    </div>
+                                </div>
+
+                                <div class="swiper-slide">
+                                    <div class="skill-card">
+                                        <img
+                                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg"
+                                            alt="C sharp-logo"
+                                        >
+                                        <span>C#</span>
+                                    </div>
+                                </div>
+
+                                <div class="swiper-slide">
+                                    <div class="skill-card">
+                                        <img
+                                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+                                            alt="JavaScript-logo"
+                                        >
+                                        <span>JavaScript</span>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="swiper-pagination"></div>
+
+                            <div
+                                class="swiper-button-prev"
+                                aria-label="Vorige vaardigheid"
+                            ></div>
+
+                            <div
+                                class="swiper-button-next"
+                                aria-label="Volgende vaardigheid"
+                            ></div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+        </div>
+
+        <!-- Project -->
+        <section class="card shadow-sm mt-4">
+            <div class="card-body p-4">
+                <h2 class="h4 card-title">Projecten</h2>
+
+                <h3 class="h5">
+                    Webapplicatie voor Ghielens Restauratiewerken
+                </h3>
+
+                <span class="badge text-bg-warning mb-3">
+                    In aanbouw
+                </span>
+
+                <p>
+                    Ik werk aan een webapplicatie voor Ghielens Restauratiewerken.
+                    Het project is momenteel in aanbouw. Meer informatie over de
+                    functionaliteiten en mijn bijdrage wordt toegevoegd zodra
+                    het project verder is uitgewerkt.
+                </p>
+            </div>
         </section>
 
-        <section>
-            <h2>Opleidingen en certificaten</h2>
+        <!-- Volledige cv -->
+        <section class="text-center my-5">
+            <h2 class="h4">Mijn volledige cv</h2>
 
-            <h3>Animator in het jeugdwerk</h3>
+            <p>Bekijk mijn cv als PDF.</p>
 
-            <p>Ik behaalde een attest als animator in het jeugdwerk. Deze opleiding leerde me hoe ik activiteiten kan begeleiden en rekening kan houden met verschillende deelnemers.</p>
-
-            <p>
-                <a href="images/animator-certificaat.pdf"
-                   target="_blank"
-                   rel="noopener noreferrer">
-                    Bekijk mijn animatorattest (PDF)
-                </a>
-            </p>
-        </section>
-
-        <section>
-            <h2>Mijn cv bekijken</h2>
-
-            <p>Wil je meer weten over mijn opleiding, vaardigheden en ervaring? Bekijk dan mijn volledige cv.</p>
-
-            <a href="images/CV.pdf" target="_blank" rel="noopener noreferrer">
+            <a
+                href="images/CV.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-primary"
+            >
                 Bekijk mijn cv (PDF)
             </a>
         </section>
+
     </main>
 
-    <footer>
-        <p>&copy; 2026 Juno Denis</p>
+    <footer class="container-fluid text-center py-4 mt-4">
+        <p class="mb-0">&copy; 2026 Juno Denis</p>
     </footer>
+
+    <!-- Bootstrap JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Swiper carousel plugin -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script>
+        const skillsSwiper = new Swiper(".skillsSwiper", {
+            slidesPerView: 3,
+            spaceBetween: 12,
+            loop: true,
+
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true
+            },
+
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev"
+            },
+
+            breakpoints: {
+                0: {
+                    slidesPerView: 1
+                },
+                576: {
+                    slidesPerView: 2
+                },
+                768: {
+                    slidesPerView: 3
+                }
+            }
+        });
+    </script>
 
 </body>
 </html>
