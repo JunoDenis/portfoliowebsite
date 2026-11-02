@@ -7,87 +7,491 @@
 
     <title>Interesses en hobby's | Juno Denis</title>
 
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Eigen CSS -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="favicon.ico">
+
+    <style>
+        .carousel-item img {
+            height: 400px;
+            object-fit: cover;
+        }
+
+        .carousel-caption {
+            background-color: rgba(50, 16, 79, 0.85);
+            border-radius: 8px;
+            padding: 12px;
+        }
+
+        .carousel-indicators button {
+            background-color: #8000FF;
+        }
+
+        .interest-section {
+            padding: 30px;
+            border-radius: 12px;
+            background-color: #f8f1ff !important;
+        }
+
+        .interest-section h2 {
+            margin-bottom: 20px;
+            color: #8000FF;
+        }
+
+        .interest-list {
+            padding-left: 20px;
+        }
+
+        .interest-list li {
+            margin-bottom: 10px;
+        }
+
+        .interest-list strong {
+            color: #6500cc;
+        }
+
+        .motivation-section {
+            border-left: 5px solid #8000FF;
+            padding: 20px 25px;
+            background-color: #fcf8ff;
+            border-radius: 8px;
+        }
+
+        main h1,
+        main h2,
+        main h3 {
+            color: #8000FF;
+        }
+
+        main section > p strong {
+            color: #6500cc;
+        }
+
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            filter: none;
+        }
+    </style>
 </head>
 
 <body>
 
+    <!-- Navigatie -->
     <header>
-        <h1>Mijn interesses en hobby's</h1>
+        <nav class="navbar navbar-expand-lg navbar-dark circus-navbar">
+            <div class="container">
 
-        <nav>
-            <a href="index.html">Start</a>
-            <a href="cv.html">CV</a>
-            <a href="ervaring.html">Ervaring</a>
-            <a href="hobby-interesse.html">Interesses / hobby's</a>
-            <a href="contact.html">Contact</a>
+                <a class="navbar-brand d-flex align-items-center gap-2"
+                   href="index.html">
+
+                    <span class="brand-icon">
+                        <i class="bi bi-code-slash" aria-hidden="true"></i>
+                    </span>
+
+                    <span class="brand-text">
+                        <strong>JUNO DENIS</strong>
+                        <small>PORTFOLIO · PROGRAMMEREN</small>
+                    </span>
+
+                </a>
+
+                <button class="navbar-toggler" type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#mainNavbar"
+                        aria-controls="mainNavbar"
+                        aria-expanded="false"
+                        aria-label="Menu openen of sluiten">
+
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="mainNavbar">
+                    <ul class="navbar-nav ms-auto">
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Start</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="cv.html">CV</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="ervaring.html">Ervaring</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link active"
+                               aria-current="page"
+                               href="hobby-interesse.html">Interesses / hobby's</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact</a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
         </nav>
     </header>
 
-    <main>
-        <section>
+    <main class="container py-4">
+
+        <!-- Titel en inleiding -->
+        <section class="mb-5">
+            <h2>Mijn interesses</h2>
+
+            <p>
+                Naast mijn opleiding heb ik verschillende hobby's waar ik graag
+                tijd aan besteed. Ik ben vooral geïnteresseerd in programmeren
+                en technologie, maar ook circus speelt een grote rol in mijn
+                vrije tijd.
+            </p>
+
+            <p>
+                Ik vind het leuk om nieuwe dingen te ontdekken, mezelf uit te
+                dagen en vaardigheden te ontwikkelen. Zowel achter mijn
+                computer als in de circushal ben ik graag bezig met dingen
+                die mijn nieuwsgierigheid prikkelen.
+            </p>
+        </section>
+
+        <!-- Bootstrap carousel -->
+        <section class="mb-5">
+
+            <h2 class="mb-3">Een kijkje in mijn hobby's</h2>
+
+            <div id="hobbyCarousel" class="carousel slide" data-bs-ride="carousel">
+
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#hobbyCarousel"
+                            data-bs-slide-to="0" class="active"
+                            aria-current="true" aria-label="Slide 1"></button>
+
+                    <button type="button" data-bs-target="#hobbyCarousel"
+                            data-bs-slide-to="1" aria-label="Slide 2"></button>
+
+                    <button type="button" data-bs-target="#hobbyCarousel"
+                            data-bs-slide-to="2" aria-label="Slide 3"></button>
+
+                    <button type="button" data-bs-target="#hobbyCarousel"
+                            data-bs-slide-to="3" aria-label="Slide 4"></button>
+
+                    <button type="button" data-bs-target="#hobbyCarousel"
+                            data-bs-slide-to="4" aria-label="Slide 5"></button>
+
+                    <button type="button" data-bs-target="#hobbyCarousel"
+                            data-bs-slide-to="5" aria-label="Slide 6"></button>
+                </div>
+
+                <div class="carousel-inner">
+
+                    <div class="carousel-item active">
+                        <img src="images/programmeren.jpg"
+                             class="d-block w-100"
+                             alt="Programmeren op een computer">
+
+                        <div class="carousel-caption">
+                            <h5>Programmeren</h5>
+                            <p>Experimenteren met code en ontdekken hoe ik zelf websites en applicaties kan bouwen.</p>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <img src="images/technologie.jpg"
+                             class="d-block w-100"
+                             alt="Technologie en computers">
+
+                        <div class="carousel-caption">
+                            <h5>Technologie</h5>
+                            <p>Nieuwsgierig zijn naar hoe computers en digitale toepassingen werken.</p>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <img src="images/jongleren.jpg"
+                             class="d-block w-100"
+                             alt="Jongleren met circusmateriaal">
+
+                        <div class="carousel-caption">
+                            <h5>Jongleren en clubs</h5>
+                            <p>Oefenen met verschillende jongleermaterialen en nieuwe technieken ontdekken.</p>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <img src="images/diabolo.jpg"
+                             class="d-block w-100"
+                             alt="Circusartiest met een diabolo">
+
+                        <div class="carousel-caption">
+                            <h5>Diabolo</h5>
+                            <p>Een van mijn belangrijkste circusdisciplines, waarin ik graag nieuwe trucs en technieken leer.</p>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <img src="images/eenwieleren.jpg"
+                             class="d-block w-100"
+                             alt="Eenwieleren">
+
+                        <div class="carousel-caption">
+                            <h5>Eenwieleren</h5>
+                            <p>Een van de vele andere circusdisciplines die ik graag beoefen en blijf ontdekken.</p>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <img src="images/circus.jpg"
+                             class="d-block w-100"
+                             alt="Assisteren bij circusactiviteiten">
+
+                        <div class="carousel-caption">
+                            <h5>Circusassistent</h5>
+                            <p>Andere deelnemers helpen en ondersteunen tijdens circuslessen.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <button class="carousel-control-prev" type="button"
+                        data-bs-target="#hobbyCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"
+                          aria-hidden="true"></span>
+                    <span class="visually-hidden">Vorige</span>
+                </button>
+
+                <button class="carousel-control-next" type="button"
+                        data-bs-target="#hobbyCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon"
+                          aria-hidden="true"></span>
+                    <span class="visually-hidden">Volgende</span>
+                </button>
+
+            </div>
+        </section>
+
+        <!-- Programmeren -->
+        <section class="mb-5 bg-light interest-section">
+
             <h2>Programmeren en technologie</h2>
 
-            <img src="images/programmeren.jpg"
-                 alt="Programmeren en technologie"
-                 width="400">
+            <p>
+                Programmeren is een interesse die ik verder ontwikkel tijdens
+                mijn opleiding Graduaat Programmeren aan Thomas More. Ik vind
+                het fascinerend dat je met code zelf websites, applicaties en
+                andere digitale projecten kunt maken.
+            </p>
 
-            <p>Ik ben geïnteresseerd in programmeren en technologie. Ik vind het leuk om te ontdekken hoe websites en applicaties werken en hoe ik zelf digitale oplossingen kan maken.</p>
+            <p>
+                Tijdens mijn opleiding maak ik kennis met verschillende
+                programmeertalen, waaronder HTML, CSS, JavaScript en C#.
+                Vooral het zoeken naar oplossingen en het bedenken van
+                mogelijkheden spreekt me aan.
+            </p>
 
-            <p>Tijdens mijn opleiding Graduaat Programmeren aan Thomas More leer ik werken met verschillende programmeertalen en technieken. Ik oefen onder andere met HTML, CSS, JavaScript en C#.</p>
+            <p>
+                Wanneer iets niet werkt zoals verwacht, probeer ik te
+                ontdekken waar het probleem zit en hoe ik het kan verbeteren.
+                Soms vraagt dat wat zoekwerk, maar door te experimenteren
+                leer ik telkens iets nieuws.
+            </p>
 
-            <p>Ik vind het interessant om problemen op te lossen en uit te zoeken waarom iets niet werkt. Door te experimenteren en fouten te verbeteren, leer ik telkens nieuwe dingen bij.</p>
         </section>
 
-        <section>
-            <h2>Circus als hobby</h2>
+        <!-- Circus -->
+        <section class="mb-5">
 
-            <img src="images/circus.jpg"
-                 alt="Circus als hobby"
-                 width="400">
+            <div class="row g-4 align-items-start">
 
-            <p>Circus is een belangrijke hobby van mij. Ik oefen graag verschillende circustechnieken en probeer mezelf regelmatig nieuwe vaardigheden aan te leren.</p>
+                <div class="col-md-5">
+                    <h2>Circus als hobby</h2>
 
-            <p>Ik houd me onder andere bezig met jongleren, diabolo en eenwieleren. Elke techniek vraagt een andere combinatie van concentratie, coördinatie en oefening.</p>
+                    <p>
+                        Circus is een grote passie van mij. Ik ben graag bezig
+                        met verschillende circusdisciplines en probeer
+                        regelmatig nieuwe technieken uit. Ik ben niet iemand
+                        die zich tot één discipline beperkt: ik vind het juist
+                        leuk om van alles wat te kunnen.
+                    </p>
 
-            <p>Ik vind het leuk om vooruitgang te merken wanneer iets dat eerst moeilijk was uiteindelijk beter lukt. Circus geeft me de kans om actief en creatief bezig te zijn.</p>
+                    <p>
+                        Mijn belangrijkste aandacht gaat momenteel naar mast,
+                        clubs en diabolo. Daarnaast beoefen ik ook andere
+                        disciplines, waaronder verschillende jongleer- en
+                        aerialtechnieken. De afwisseling maakt circus voor mij
+                        zo interessant.
+                    </p>
+                </div>
+
+                <div class="col-md-7">
+                    <h3>Wat ik graag oefen</h3>
+
+                    <ul class="interest-list">
+                        <li>
+                            <strong>Mast:</strong>
+                            werken aan verschillende technieken en mijn
+                            controle en vaardigheden verder ontwikkelen.
+                        </li>
+
+                        <li>
+                            <strong>Clubs:</strong>
+                            jongleren met clubs en nieuwe combinaties en
+                            trucs oefenen.
+                        </li>
+
+                        <li>
+                            <strong>Diabolo:</strong>
+                            nieuwe technieken ontdekken, trucs uitproberen
+                            en mijn vaardigheden verbeteren.
+                        </li>
+
+                        <li>
+                            <strong>Andere disciplines:</strong>
+                            ook aerial, eenwieleren, jongleren en andere
+                            circusvormen uitproberen en beoefenen.
+                        </li>
+                    </ul>
+
+                </div>
+
+            </div>
+
         </section>
 
-        <section>
+        <!-- Circusassistent -->
+        <section class="mb-5 bg-light interest-section">
+
             <h2>Helpen bij circuslessen</h2>
 
-            <p>Naast het beoefenen van circus help ik ook bij circusactiviteiten. Als assistent ondersteun ik bij de begeleiding van deelnemers en help ik mee om de lessen vlot te laten verlopen.</p>
+            <p>
+                Naast mijn eigen circuslessen help ik ook regelmatig bij
+                circusactiviteiten. Als assistent ondersteun ik de lesgevers
+                en help ik deelnemers bij het oefenen van verschillende
+                circusdisciplines.
+            </p>
 
-            <p>Ik vind het belangrijk dat deelnemers de kans krijgen om op hun eigen tempo te oefenen en nieuwe dingen te proberen. Het is fijn om te zien wanneer iemand een techniek onder de knie krijgt.</p>
+            <p>
+                Doordat ik zelf met veel verschillende technieken bezig ben,
+                vind ik het interessant om anderen te helpen en mijn eigen
+                ervaring te delen. Ik vind het fijn om deelnemers te zien
+                groeien en steeds zelfstandiger nieuwe vaardigheden te leren.
+            </p>
+
         </section>
 
-        <section>
+        <!-- Motivatie -->
+        <section class="mb-5 motivation-section">
+
             <h2>Wat mij motiveert</h2>
 
-            <p>Ik word gemotiveerd door nieuwe dingen te leren en mijn vaardigheden stap voor stap te verbeteren. Dat geldt zowel voor programmeren als voor circus.</p>
+            <p>
+                Wat mij vooral motiveert, is de afwisseling. Ik vind het leuk
+                om nieuwe circusdisciplines te ontdekken, verschillende
+                technieken uit te proberen en mezelf telkens nieuwe
+                uitdagingen te geven. Soms ligt mijn focus op mast, clubs
+                of diabolo, maar ik sta ook open voor heel wat andere
+                circusvormen.
+            </p>
 
-            <p>Ik vind het fijn om zelfstandig aan een uitdaging te werken, oplossingen te zoeken en uiteindelijk resultaat te zien van mijn inspanningen.</p>
+            <p>
+                Ik hoef me niet tot één techniek te beperken. Juist het
+                combineren van verschillende vaardigheden en blijven
+                bijleren maakt circus voor mij zo boeiend.
+            </p>
+
         </section>
 
-        <section>
+        <!-- Overzicht -->
+        <section class="mb-4">
+
             <h2>Mijn belangrijkste interesses in het kort</h2>
 
-            <ul>
-                <li>Programmeren en technologie</li>
-                <li>Websites en applicaties ontwikkelen</li>
-                <li>Jongleren</li>
-                <li>Diabolo</li>
-                <li>Eenwieleren</li>
-                <li>Assisteren bij circuslessen</li>
-                <li>Nieuwe vaardigheden leren</li>
-            </ul>
+            <div class="row">
+                <div class="col-md-6">
+                    <ul>
+                        <li>Programmeren en technologie</li>
+                        <li>Websites en applicaties ontwikkelen</li>
+                        <li>Nieuwe vaardigheden leren</li>
+                    </ul>
+                </div>
+
+                <div class="col-md-6">
+                    <ul>
+                        <li>Mast</li>
+                        <li>Clubs</li>
+                        <li>Diabolo</li>
+                        <li>Aerial en andere circusdisciplines</li>
+                        <li>Jongleren en eenwieleren</li>
+                        <li>Assisteren bij circuslessen</li>
+                    </ul>
+                </div>
+            </div>
+
         </section>
+
     </main>
 
-    <footer>
-        <p>&copy; 2026 Juno Denis</p>
+    <!-- Footer -->
+    <footer class="site-footer">
+
+        <div class="container">
+
+            <div class="row align-items-center justify-content-center">
+
+                <!-- Copyright -->
+                <div class="col-auto">
+
+                    <p class="mb-0">
+                        &copy; 2026 Juno Denis
+                    </p>
+
+                </div>
+
+                <!-- LinkedIn pictogram -->
+                <div class="col-auto">
+
+                    <a href="https://www.linkedin.com/in/juno-denis-677b60400/"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       class="linkedin-icon"
+                       aria-label="Bekijk mijn LinkedIn-profiel">
+
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                             width="32"
+                             height="32"
+                             viewBox="0 0 24 24"
+                             aria-hidden="true">
+
+                            <rect width="24" height="24"
+                                  rx="3"
+                                  fill="#0A66C2"/>
+
+                            <path fill="#FFFFFF"
+                                  d="M6.5 9.2H9v8.3H6.5zM7.75 5.5a1.45 1.45 0 1 1 0 2.9 1.45 1.45 0 0 1 0-2.9M10.5 9.2h2.4v1.14h.04c.34-.65 1.15-1.34 2.37-1.34 2.53 0 3 1.66 3 3.82v4.68h-2.5v-4.15c0-.99-.02-2.27-1.38-2.27-1.39 0-1.6 1.08-1.6 2.2v4.22h-2.5z"/>
+
+                        </svg>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
     </footer>
+
+    <!-- Bootstrap JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>

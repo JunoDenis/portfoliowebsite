@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Ervaring - Mijn portfolio</title>
+    <title>Ervaring - Juno Denis</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
           rel="stylesheet">
@@ -22,7 +22,7 @@
             height: 100%;
             border: none;
             border-radius: 15px;
-            box-shadow: 0 0.15rem 0.7rem rgba(0, 0, 0, 0.08);
+            box-shadow: 0 0.15rem 0.7rem rgba(50, 16, 79, 0.09);
         }
 
         .experience-card .card-body {
@@ -30,7 +30,7 @@
         }
 
         .section-icon {
-            color: #8000ff;
+            color: #8000FF;
             font-size: 1.5rem;
             margin-right: 0.5rem;
         }
@@ -38,7 +38,7 @@
         .experience-entry {
             padding-bottom: 1rem;
             margin-bottom: 1rem;
-            border-bottom: 1px solid #eeeeee;
+            border-bottom: 1px solid #eee;
         }
 
         .experience-entry:last-child {
@@ -47,9 +47,14 @@
             border-bottom: none;
         }
 
+        .experience-entry h3 {
+            color: #32104F;
+        }
+
         /* Projectkaart */
         .project-card {
-            border-left: 5px solid #8000ff;
+            border-left: 5px solid #8000FF;
+            background: linear-gradient(to right, #fcf8ff, #ffffff);
         }
 
         .project-status {
@@ -88,10 +93,10 @@
             align-items: center;
             justify-content: center;
             padding: 12px;
-            border: 1px solid #dee2e6;
+            border: 1px solid #e4d5f2;
             border-radius: 12px;
-            background: white;
-            box-shadow: 0 0.15rem 0.5rem rgba(0, 0, 0, 0.04);
+            background: #fff;
+            box-shadow: 0 0.15rem 0.5rem rgba(50, 16, 79, 0.05);
             backface-visibility: hidden;
             -webkit-backface-visibility: hidden;
             overflow-wrap: anywhere;
@@ -108,18 +113,18 @@
         .skill-front i {
             display: block;
             margin-bottom: 0.5rem;
-            color: #8000ff;
+            color: #8000FF;
             font-size: 1.8rem;
         }
 
         .skill-front:hover,
         .skill-back:hover {
-            box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.12);
+            box-shadow: 0 0.25rem 0.75rem rgba(50, 16, 79, 0.15);
         }
 
         .skill-front:focus-visible,
         .skill-back:focus-visible {
-            outline: 3px solid #8000ff;
+            outline: 3px solid #8000FF;
             outline-offset: 3px;
         }
 
@@ -140,7 +145,6 @@
             margin-bottom: 0.5rem;
         }
 
-        /* Verberg de achterkant als de kaart nog dicht is */
         .skill-item:not(.is-flipped) .skill-back {
             visibility: hidden;
         }
@@ -152,6 +156,7 @@
         /* Tabel */
         .skills-table th {
             background-color: #f5ebff;
+            color: #32104F;
         }
 
         .skills-table td,
@@ -171,10 +176,25 @@
         .progress {
             height: 9px;
             border-radius: 10px;
+            background-color: #eee5f5;
         }
 
         .progress-bar {
-            background-color: #8000ff;
+            background-color: #8000FF;
+        }
+
+        /* Kleine paarse accenten */
+        .page-intro {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .page-intro h1 {
+            color: #32104F;
+        }
+
+        .page-intro p {
+            color: #6c757d;
         }
 
         @media (prefers-reduced-motion: reduce) {
@@ -187,11 +207,23 @@
 
 <body>
 
-    <!-- Navigatie: dezelfde structuur als index.html -->
+    <!-- Navigatie -->
     <header>
-        <nav class="navbar navbar-dark circus-navbar">
+        <nav class="navbar navbar-expand-lg navbar-dark circus-navbar">
             <div class="container">
-                <span class="navbar-brand fw-bold">Mijn portfolio</span>
+
+                <a class="navbar-brand d-flex align-items-center gap-2"
+                   href="index.html">
+
+                    <span class="brand-icon">
+                        <i class="bi bi-code-slash" aria-hidden="true"></i>
+                    </span>
+
+                    <span class="brand-text">
+                        <strong>JUNO DENIS</strong>
+                        <small>PORTFOLIO · PROGRAMMEREN</small>
+                    </span>
+                </a>
 
                 <button class="navbar-toggler" type="button"
                         data-bs-toggle="collapse"
@@ -204,6 +236,7 @@
 
                 <div class="collapse navbar-collapse" id="mainNavbar">
                     <ul class="navbar-nav ms-auto">
+
                         <li class="nav-item">
                             <a class="nav-link" href="index.html">Start</a>
                         </li>
@@ -226,6 +259,7 @@
                         <li class="nav-item">
                             <a class="nav-link" href="contact.html">Contact</a>
                         </li>
+
                     </ul>
                 </div>
             </div>
@@ -235,10 +269,11 @@
     <main class="container py-4">
 
         <!-- Paginatitel -->
-        <div class="text-center mb-4">
+        <div class="text-center mb-4 page-intro">
             <h1>Mijn ervaring</h1>
-            <p class="text-muted">
-                Een overzicht van mijn opleiding, werkervaring en programmeerkennis.
+            <p>
+                Van mijn eerste stappen in het werkveld tot mijn groeiende
+                programmeerkennis: hier ontdek je wat ik al heb geleerd en gedaan.
             </p>
         </div>
 
@@ -249,6 +284,7 @@
             <div class="col-md-6">
                 <div class="card experience-card">
                     <div class="card-body">
+
                         <h2 class="h4 mb-4">
                             <i class="bi bi-mortarboard section-icon"
                                aria-hidden="true"></i>
@@ -257,31 +293,41 @@
 
                         <div class="experience-entry">
                             <h3 class="h5">Graduaat Programmeren</h3>
+
                             <p class="text-muted mb-1">
                                 Thomas More Kempen — Turnhout
                             </p>
+
                             <p class="text-muted small mb-2">
                                 September 2026 – heden
                             </p>
+
                             <p class="mb-0">
-                                Ik leer programmeren en werk aan praktische
-                                opdrachten en projecten.
+                                Ik leer de wereld van programmeren steeds beter
+                                kennen. Via praktische opdrachten en projecten
+                                ontdek ik hoe ik ideeën kan omzetten in werkende
+                                toepassingen.
                             </p>
                         </div>
 
                         <div class="experience-entry">
                             <h3 class="h5">Bedrijf en organisatie</h3>
+
                             <p class="text-muted mb-1">
                                 Immaculata — Malle
                             </p>
+
                             <p class="text-muted small mb-2">
                                 September 2020 – juni 2026
                             </p>
+
                             <p class="mb-0">
-                                Mijn middelbare opleiding, met aandacht voor
-                                bedrijfsgerichte en administratieve vaardigheden.
+                                Mijn middelbare opleiding, waarin ik onder andere
+                                bedrijfsgerichte en administratieve vaardigheden
+                                ontwikkelde.
                             </p>
                         </div>
+
                     </div>
                 </div>
             </div>
@@ -290,6 +336,7 @@
             <div class="col-md-6">
                 <div class="card experience-card">
                     <div class="card-body">
+
                         <h2 class="h4 mb-4">
                             <i class="bi bi-briefcase section-icon"
                                aria-hidden="true"></i>
@@ -298,41 +345,57 @@
 
                         <div class="experience-entry">
                             <h3 class="h5">Colruyt Group</h3>
+
                             <p class="text-muted mb-1">Westmalle</p>
+
                             <p class="text-muted small mb-2">
                                 Januari 2025 – mei 2025
                             </p>
+
                             <p class="mb-0">
-                                Studentenjob waarbij ik ervaring opdeed met
-                                werken in een professionele omgeving.
+                                Tijdens mijn studentenjob hielp ik mee in de winkel
+                                met het aanvullen van producten en het ondersteunen
+                                van klanten. Zo leerde ik samenwerken en
+                                verantwoordelijkheid opnemen.
                             </p>
                         </div>
 
                         <div class="experience-entry">
                             <h3 class="h5">Ghielens Restauratiewerken</h3>
+
                             <p class="text-muted mb-1">
                                 Administratieve stage
                             </p>
+
                             <p class="text-muted small mb-2">
                                 September 2025 – juni 2026
                             </p>
+
                             <p class="mb-0">
-                                Ik deed ervaring op met administratieve taken
-                                en werkte aan een webapplicatie als project.
+                                Ik deed ervaring op met administratieve taken en
+                                werkte aan een webapplicatie als project. Een
+                                mooie kans om mijn interesse in technologie
+                                verder te ontdekken.
                             </p>
                         </div>
 
                         <div class="experience-entry">
                             <h3 class="h5">Circusassistent</h3>
+
                             <p class="text-muted mb-1">Locorotondo VZW</p>
+
                             <p class="text-muted small mb-2">
                                 September 2025 – heden
                             </p>
+
                             <p class="mb-0">
                                 Ik help mee tijdens circuslessen en ondersteun
-                                bij activiteiten en begeleiding.
+                                bij activiteiten en begeleiding. Daarbij komen
+                                samenwerken, creativiteit en initiatief nemen
+                                goed van pas.
                             </p>
                         </div>
+
                     </div>
                 </div>
             </div>
@@ -342,6 +405,7 @@
         <!-- Project -->
         <div class="card experience-card project-card mb-4">
             <div class="card-body">
+
                 <h2 class="h4 mb-3">
                     <i class="bi bi-code-square section-icon"
                        aria-hidden="true"></i>
@@ -355,14 +419,16 @@
                 </h3>
 
                 <p class="mb-2">
-                    Ik werk aan een webapplicatie als onderdeel van mijn project.
-                    Daarbij kan ik mijn kennis van webontwikkeling en programmeren
-                    verder toepassen.
+                    Voor Ghielens Restauratiewerken werk ik aan een
+                    webapplicatie als onderdeel van mijn project. Hierbij
+                    kan ik mijn kennis van webontwikkeling en programmeren
+                    toepassen en verder uitbreiden.
                 </p>
 
                 <p class="text-muted mb-0">
-                    De applicatie is nog in ontwikkeling.
+                    Dit project is nog in ontwikkeling. Wordt vervolgd!
                 </p>
+
             </div>
         </div>
 
@@ -373,6 +439,7 @@
             <div class="col-lg-6">
                 <div class="card experience-card">
                     <div class="card-body">
+
                         <h2 class="h4 mb-2">
                             <i class="bi bi-laptop section-icon"
                                aria-hidden="true"></i>
@@ -396,9 +463,12 @@
                                                 aria-expanded="false"
                                                 aria-controls="htmlBack"
                                                 onclick="flipSkill('htmlCard')">
+
                                             <i class="bi bi-filetype-html"
                                                aria-hidden="true"></i>
+
                                             <span>HTML</span>
+
                                             <small class="text-muted mt-2">
                                                 Klik om te ontdekken
                                             </small>
@@ -410,15 +480,19 @@
                                                 aria-label="Terug naar HTML"
                                                 onclick="flipSkill('htmlCard')"
                                                 inert>
+
                                             <strong>HTML</strong>
+
                                             <p>
                                                 Bepaalt de structuur en inhoud
                                                 van webpagina's.
                                             </p>
+
                                             <p>
                                                 <strong>Toegepast in:</strong>
                                                 mijn portfolio.
                                             </p>
+
                                             <small class="text-muted mt-auto">
                                                 Klik om terug te draaien
                                             </small>
@@ -439,9 +513,12 @@
                                                 aria-expanded="false"
                                                 aria-controls="cssBack"
                                                 onclick="flipSkill('cssCard')">
+
                                             <i class="bi bi-filetype-css"
                                                aria-hidden="true"></i>
+
                                             <span>CSS</span>
+
                                             <small class="text-muted mt-2">
                                                 Klik om te ontdekken
                                             </small>
@@ -453,15 +530,19 @@
                                                 aria-label="Terug naar CSS"
                                                 onclick="flipSkill('cssCard')"
                                                 inert>
+
                                             <strong>CSS</strong>
+
                                             <p>
                                                 Zorgt voor de vormgeving, kleuren
                                                 en lay-out van websites.
                                             </p>
+
                                             <p>
                                                 <strong>Toegepast in:</strong>
                                                 de styling van mijn portfolio.
                                             </p>
+
                                             <small class="text-muted mt-auto">
                                                 Klik om terug te draaien
                                             </small>
@@ -482,9 +563,12 @@
                                                 aria-expanded="false"
                                                 aria-controls="sqlBack"
                                                 onclick="flipSkill('sqlCard')">
+
                                             <i class="bi bi-database"
                                                aria-hidden="true"></i>
+
                                             <span>SQL / MySQL</span>
+
                                             <small class="text-muted mt-2">
                                                 Klik om te ontdekken
                                             </small>
@@ -496,15 +580,19 @@
                                                 aria-label="Terug naar SQL en MySQL"
                                                 onclick="flipSkill('sqlCard')"
                                                 inert>
+
                                             <strong>SQL / MySQL</strong>
+
                                             <p>
                                                 Wordt gebruikt om gegevens in
                                                 databases op te vragen en te beheren.
                                             </p>
+
                                             <p>
                                                 <strong>Toegepast in:</strong>
                                                 databaseoefeningen.
                                             </p>
+
                                             <small class="text-muted mt-auto">
                                                 Klik om terug te draaien
                                             </small>
@@ -525,9 +613,12 @@
                                                 aria-expanded="false"
                                                 aria-controls="bootstrapBack"
                                                 onclick="flipSkill('bootstrapCard')">
+
                                             <i class="bi bi-bootstrap"
                                                aria-hidden="true"></i>
+
                                             <span>Bootstrap</span>
+
                                             <small class="text-muted mt-2">
                                                 Klik om te ontdekken
                                             </small>
@@ -539,16 +630,20 @@
                                                 aria-label="Terug naar Bootstrap"
                                                 onclick="flipSkill('bootstrapCard')"
                                                 inert>
+
                                             <strong>Bootstrap</strong>
+
                                             <p>
                                                 Helpt om websites te bouwen die
                                                 zich aanpassen aan verschillende
                                                 schermgroottes.
                                             </p>
+
                                             <p>
                                                 <strong>Toegepast in:</strong>
                                                 de lay-out van mijn portfolio.
                                             </p>
+
                                             <small class="text-muted mt-auto">
                                                 Klik om terug te draaien
                                             </small>
@@ -567,6 +662,7 @@
             <div class="col-lg-6">
                 <div class="card experience-card">
                     <div class="card-body">
+
                         <h2 class="h4 mb-3">
                             <i class="bi bi-table section-icon"
                                aria-hidden="true"></i>
@@ -575,6 +671,7 @@
 
                         <div class="table-responsive">
                             <table class="table table-bordered skills-table mb-0">
+
                                 <caption>
                                     Overzicht van mijn programmeerkennis
                                 </caption>
@@ -591,29 +688,36 @@
                                         <td>HTML</td>
                                         <td>Structuur van webpagina's</td>
                                     </tr>
+
                                     <tr>
                                         <td>CSS</td>
                                         <td>Vormgeving van websites</td>
                                     </tr>
+
                                     <tr>
                                         <td>SQL / MySQL</td>
                                         <td>Databases en gegevens</td>
                                     </tr>
+
                                     <tr>
                                         <td>Bootstrap</td>
                                         <td>Responsieve lay-outs</td>
                                     </tr>
+
                                     <tr>
                                         <td>C#</td>
                                         <td>Consoleapplicaties en logica</td>
                                     </tr>
+
                                     <tr>
                                         <td>JavaScript</td>
                                         <td>Interactie op webpagina's</td>
                                     </tr>
                                 </tbody>
+
                             </table>
                         </div>
+
                     </div>
                 </div>
             </div>
@@ -623,6 +727,7 @@
         <!-- Talenkennis -->
         <div class="card experience-card mb-4">
             <div class="card-body">
+
                 <h2 class="h4 mb-4">
                     <i class="bi bi-translate section-icon"
                        aria-hidden="true"></i>
@@ -632,14 +737,20 @@
                 <div class="row g-4">
 
                     <div class="col-md-6">
+
                         <div class="language-item">
                             <div class="d-flex justify-content-between mb-1">
                                 <span>Nederlands</span>
                                 <span class="text-muted">Moedertaal</span>
                             </div>
+
                             <div class="progress"
                                  role="progressbar"
-                                 aria-label="Nederlands">
+                                 aria-label="Nederlands"
+                                 aria-valuenow="100"
+                                 aria-valuemin="0"
+                                 aria-valuemax="100">
+
                                 <div class="progress-bar" style="width: 100%"></div>
                             </div>
                         </div>
@@ -649,23 +760,35 @@
                                 <span>Engels</span>
                                 <span class="text-muted">Vlot</span>
                             </div>
+
                             <div class="progress"
                                  role="progressbar"
-                                 aria-label="Engels">
+                                 aria-label="Engels"
+                                 aria-valuenow="90"
+                                 aria-valuemin="0"
+                                 aria-valuemax="100">
+
                                 <div class="progress-bar" style="width: 90%"></div>
                             </div>
                         </div>
+
                     </div>
 
                     <div class="col-md-6">
+
                         <div class="language-item">
                             <div class="d-flex justify-content-between mb-1">
                                 <span>Duits</span>
                                 <span class="text-muted">Beginner</span>
                             </div>
+
                             <div class="progress"
                                  role="progressbar"
-                                 aria-label="Duits">
+                                 aria-label="Duits"
+                                 aria-valuenow="25"
+                                 aria-valuemin="0"
+                                 aria-valuemax="100">
+
                                 <div class="progress-bar" style="width: 25%"></div>
                             </div>
                         </div>
@@ -675,12 +798,18 @@
                                 <span>Frans</span>
                                 <span class="text-muted">Beginner</span>
                             </div>
+
                             <div class="progress"
                                  role="progressbar"
-                                 aria-label="Frans">
+                                 aria-label="Frans"
+                                 aria-valuenow="25"
+                                 aria-valuemin="0"
+                                 aria-valuemax="100">
+
                                 <div class="progress-bar" style="width: 25%"></div>
                             </div>
                         </div>
+
                     </div>
 
                 </div>
@@ -691,24 +820,46 @@
 
     <!-- Footer -->
     <footer class="site-footer">
-        <div class="container text-center py-3">
-            <p class="mb-2">
-                &copy; 2026 Juno Denis — Mijn portfolio
-            </p>
+        <div class="container">
 
-            <a href="https://www.linkedin.com/in/juno-denis-677b60400/"
-               target="_blank"
-               rel="noopener noreferrer"
-               aria-label="LinkedIn-profiel">
-                <svg xmlns="http://www.w3.org/2000/svg"
-                     width="24"
-                     height="24"
-                     fill="currentColor"
-                     viewBox="0 0 16 16"
-                     aria-hidden="true">
-                    <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zM3.743 5.185c.837 0 1.357-.554 1.357-1.248-.015-.709-.52-1.248-1.341-1.248-.82 0-1.356.54-1.356 1.248 0 .694.52 1.248 1.326 1.248h.014zm4.66 8.209V9.359c0-.216.016-.432.08-.586.173-.432.567-.88 1.23-.88.867 0 1.213.663 1.213 1.635v3.866h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.16 1.193v.025h-.016l.016-.025V6.169H6.002c.03.678 0 7.225 0 7.225h2.401z"/>
-                </svg>
-            </a>
+            <div class="row align-items-center justify-content-center">
+
+                <!-- Copyright -->
+                <div class="col-auto">
+                    <p class="mb-0">
+                        &copy; 2026 Juno Denis
+                    </p>
+                </div>
+
+                <!-- LinkedIn pictogram -->
+                <div class="col-auto">
+
+                    <a href="https://www.linkedin.com/in/juno-denis-677b60400/"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       class="linkedin-icon"
+                       aria-label="Bekijk mijn LinkedIn-profiel">
+
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                             width="32"
+                             height="32"
+                             viewBox="0 0 24 24"
+                             aria-hidden="true">
+
+                            <rect width="24" height="24"
+                                  rx="3"
+                                  fill="#0A66C2"/>
+
+                            <path fill="#FFFFFF"
+                                  d="M6.5 9.2H9v8.3H6.5zM7.75 5.5a1.45 1.45 0 1 1 0 2.9 1.45 1.45 0 0 1 0-2.9M10.5 9.2h2.4v1.14h.04c.34-.65 1.15-1.34 2.37-1.34 2.53 0 3 1.66 3 3.82v4.68h-2.5v-4.15c0-.99-.02-2.27-1.38-2.27-1.39 0-1.6 1.08-1.6 2.2v4.22h-2.5z"/>
+
+                        </svg>
+
+                    </a>
+
+                </div>
+
+            </div>
         </div>
     </footer>
 

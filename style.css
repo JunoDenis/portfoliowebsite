@@ -1,5 +1,8 @@
 
-/* Algemene instellingen voor de volledige website */
+/* =========================================
+   ALGEMENE INSTELLINGEN
+========================================= */
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -9,49 +12,109 @@ body {
     line-height: 1.6;
 }
 
-/* Bovenkant van de pagina */
-header {
-    background-color: #80f;
-    color: #fff;
-    text-align: center;
-    padding: 25px 15px;
-}
+/* =========================================
+   KLEUREN EN TITELS
+========================================= */
 
-/* Hoofdtitels */
 h1 {
     margin-top: 0;
     margin-bottom: 20px;
 }
 
-h2 {
-    color: #80f;
-    margin-top: 0;
-}
-
+h2,
 h3 {
-    color: #80f;
+    color: #8000FF;
 }
 
-/* Navigatiemenu */
-nav {
+p {
+    margin-bottom: 15px;
+}
+
+a {
+    color: #8000FF;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* =========================================
+   NAVBAR - BOOTSTRAP
+========================================= */
+
+.circus-navbar {
+    background-color: #32104F;
+    padding: 15px 0;
+}
+
+.circus-navbar .navbar-brand {
+    color: white;
+}
+
+.brand-icon {
+    background-color: #8000FF;
+    color: white;
+    width: 42px;
+    height: 42px;
+    border-radius: 8px;
     display: flex;
+    align-items: center;
     justify-content: center;
-    flex-wrap: wrap;
-    gap: 10px;
+    font-size: 23px;
 }
 
-nav a {
-    color: #fff;
-    text-decoration: none;
-    padding: 8px 12px;
+.brand-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+    letter-spacing: 1px;
+}
+
+.brand-text small {
+    color: #D9B8F5;
+    font-size: 10px;
+    margin-top: 4px;
+}
+
+.circus-navbar .nav-link {
+    color: #E8DDF0;
+    padding: 10px 12px;
+    position: relative;
+    transition: color 0.2s ease;
+}
+
+.circus-navbar .nav-link:hover {
+    color: white;
+}
+
+.circus-navbar .nav-link.active {
+    color: white;
+    font-weight: bold;
+}
+
+.circus-navbar .nav-link.active::after {
+    content: "";
+    position: absolute;
+    bottom: 2px;
+    left: 12px;
+    right: 12px;
+    height: 3px;
+    background-color: #8000FF;
     border-radius: 5px;
 }
 
-nav a:hover {
-    background-color: #000;
+.circus-navbar .navbar-toggler {
+    border-color: #D9B8F5;
 }
 
-/* Inhoud van de pagina */
+.circus-navbar .navbar-toggler:focus {
+    box-shadow: 0 0 0 0.2rem rgba(217, 184, 245, 0.3);
+}
+
+/* =========================================
+   PAGINA-INHOUD
+========================================= */
+
 main {
     max-width: 1000px;
     margin: 25px auto;
@@ -66,20 +129,26 @@ section {
     border-radius: 8px;
 }
 
-/* Paragrafen en links */
-p {
-    margin-bottom: 15px;
+section h2,
+section h3 {
+    color: #8000FF;
 }
 
-a {
-    color: #80f;
+/* =========================================
+   HEADER
+========================================= */
+
+header:not(.circus-navbar) {
+    background-color: #8000FF;
+    color: #fff;
+    text-align: center;
+    padding: 25px 15px;
 }
 
-a:hover {
-    text-decoration: underline;
-}
+/* =========================================
+   AFBEELDINGEN
+========================================= */
 
-/* Profielfoto op de startpagina */
 .profielfoto {
     width: 200px;
     max-width: 100%;
@@ -87,12 +156,18 @@ a:hover {
     border-radius: 10px;
 }
 
-/* Lijsten */
+/* =========================================
+   LIJSTEN
+========================================= */
+
 ul {
     padding-left: 25px;
 }
 
-/* Tabellen */
+/* =========================================
+   TABELLEN
+========================================= */
+
 table {
     width: 100%;
     border-collapse: collapse;
@@ -104,7 +179,7 @@ table {
 caption {
     font-weight: bold;
     padding: 10px;
-    color: #80f;
+    color: #8000FF;
 }
 
 th,
@@ -115,11 +190,14 @@ td {
 }
 
 th {
-    background-color: #80f;
+    background-color: #8000FF;
     color: #fff;
 }
 
-/* Contactformulier */
+/* =========================================
+   FORMULIEREN
+========================================= */
+
 form {
     display: flex;
     flex-direction: column;
@@ -149,7 +227,7 @@ textarea {
 }
 
 button {
-    background-color: #80f;
+    background-color: #8000FF;
     color: #fff;
     border: 2px solid #000;
     padding: 10px 16px;
@@ -162,32 +240,107 @@ button:hover {
     color: #fff;
 }
 
-/* Project dat nog in aanbouw is */
+/* =========================================
+   PROJECT IN AANBOUW
+========================================= */
+
 .project-banner {
     padding: 15px;
     margin: 20px 0;
-    border: 2px dashed #80f;
+    border: 2px dashed #8000FF;
     border-radius: 8px;
     text-align: center;
     background-color: #f2f2f2;
     color: #000;
 }
 
-/* Voet van de pagina */
-footer {
-    background-color: #80f;
+/* =========================================
+   CV EN SKILLS
+========================================= */
+
+.cv-section {
+    background-color: #fff;
+    color: #000;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+.cv-section h2,
+.cv-section h3 {
+    color: #8000FF;
+}
+
+/* =========================================
+   CAROUSEL
+========================================= */
+
+.carousel-indicators button {
+    background-color: #8000FF;
+}
+
+/* Swiper behoudt zijn eigen werking en afmetingen.
+   Alleen de paarse accenten worden aangepast. */
+
+.swiper-button-next,
+.swiper-button-prev {
+    color: #8000FF;
+}
+
+.swiper-pagination-bullet-active {
+    background-color: #8000FF;
+}
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.site-footer {
+    background-color: #32104F;
     color: #fff;
     text-align: center;
-    padding: 10px;
+    padding: 15px;
     margin-top: 30px;
 }
 
-footer p {
+.site-footer p {
     margin: 0;
 }
 
-/* Aanpassing voor kleinere schermen */
-@media (max-width: 600px) {
+.site-footer a {
+    color: white;
+    text-decoration: none;
+}
+
+.site-footer a:hover {
+    text-decoration: underline;
+}
+
+/* =========================================
+   LINKEDIN
+========================================= */
+
+.site-footer .linkedin-icon {
+    fill: #0A66C2;
+}
+
+/* =========================================
+   RESPONSIVE - BOOTSTRAP AANVULLINGEN
+========================================= */
+
+@media (max-width: 991.98px) {
+    .circus-navbar .navbar-nav {
+        padding-top: 15px;
+    }
+
+    .circus-navbar .nav-link.active::after {
+        left: 0;
+        right: auto;
+        width: 35px;
+    }
+}
+
+@media (max-width: 576px) {
     main {
         padding: 0 12px;
     }
@@ -196,8 +349,51 @@ footer p {
         padding: 15px;
     }
 
-    nav {
-        gap: 5px;
+    table {
+        font-size: 0.9rem;
+    }
+
+    th,
+    td {
+        padding: 7px;
     }
 }
 
+/* =========================================
+   EXTRA AANPASSINGEN
+========================================= */
+
+/* Grotere profielfoto op de CV */
+.profielfoto,
+.cv-photo,
+.cv-foto {
+    width: 300px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+/* Grotere en paarse paginatitels */
+h1 {
+    font-size: 2.5rem;
+    color: #8000FF;
+}
+
+/* Extra paarse accenten voor CV en interesses */
+main h2,
+main h3 {
+    color: #8000FF !important;
+}
+
+/* Titels in witte secties */
+section h1,
+section h2,
+section h3 {
+    color: #8000FF !important;
+}
+
+/* Extra paarse accenten voor Bootstrap cards */
+.card-title {
+    color: #8000FF !important;
+}
